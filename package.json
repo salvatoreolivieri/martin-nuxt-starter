@@ -1,0 +1,83 @@
+{
+  "name": "my-nuxt-starter",
+  "type": "module",
+  "version": "2.0.0",
+  "private": true,
+  "packageManager": "bun@1.2.13",
+  "license": "MIT",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "prepare": "nuxt prepare",
+    "postinstall": "nuxt prepare",
+    "storybook": "storybook dev -p 6006 --no-open",
+    "build-storybook": "storybook build",
+    "test:unit": "vitest",
+    "test:unit-run": "vitest run",
+    "test:unit-coverage": "vitest --coverage",
+    "test:unit-ui": "vitest --coverage --ui",
+    "test:e2e": "playwright test",
+    "test:e2e-ui": "playwright test --ui",
+    "test:codegen": "playwright codegen http://localhost:3000/",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "nuxt typecheck"
+  },
+  "dependencies": {
+    "@nuxt/devtools": "^2.6.2",
+    "@nuxt/ui": "^3.2.0",
+    "@nuxtjs/seo": "^3.1.0",
+    "@tailwindcss/vite": "^4.1.11",
+    "@vueuse/core": "^13.5.0",
+    "@vueuse/nuxt": "^13.5.0",
+    "nuxt": "^4.0.3",
+    "nuxt-security": "^2.2.0",
+    "tailwindcss": "^4.1.11",
+    "vue": "^3.5.17",
+    "vue-router": "^4.5.1",
+    "vue-sonner": "^2.0.2"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.17.0",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@iconify-json/lucide": "^1.2.57",
+    "@nuxt/eslint": "^1.7.0",
+    "@nuxt/image": "^1.10.0",
+    "@nuxt/test-utils": "^3.19.2",
+    "@nuxtjs/storybook": "8.4.2-29212946.04b4f98",
+    "@playwright/test": "^1.54.1",
+    "@storybook/addon-a11y": "9.0.5",
+    "@storybook/addon-docs": "9.0.5",
+    "@storybook/addon-vitest": "9.0.5",
+    "@testing-library/vue": "^8.1.0",
+    "@types/node": "^24.1.0",
+    "@vitest/coverage-istanbul": "3.2.4",
+    "@vitest/coverage-v8": "3.2.4",
+    "@vitest/ui": "^3.2.4",
+    "@vue/test-utils": "^2.4.6",
+    "@vueless/storybook-dark-mode": "^9.0.6",
+    "eslint": "^9.31.0",
+    "eslint-plugin-format": "^1.0.1",
+    "eslint-plugin-storybook": "9.0.15",
+    "happy-dom": "^18.0.1",
+    "lint-staged": "^16.1.2",
+    "playwright-core": "^1.54.1",
+    "simple-git-hooks": "^2.13.0",
+    "storybook": "9.0.5",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4",
+    "vue-tsc": "^3.0.3"
+  },
+  "simple-git-hooks": {
+    "commit-msg": "bun commitlint --edit $1",
+    "pre-commit": "bun lint-staged && bun typecheck"
+  },
+  "lint-staged": {
+    "*": [
+      "bun lint"
+    ]
+  }
+}
