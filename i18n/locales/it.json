@@ -1,0 +1,10 @@
+{
+  "success": "successo",
+  "error": "errore",
+  "home": {
+    "hero": {
+      "title": "Tutto il tuo studio terapeutico in un unico spazio",
+      "subtitle": "Gestisci studio, pazienti e sedute in un'unica piattaforma sicura e risparmia il 70% del tempo di lavoro extra-seduta"
+    }
+  }
+}

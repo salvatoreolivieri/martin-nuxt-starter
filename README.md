@@ -20,6 +20,7 @@
 - **🚀 Bun** - Ultra fast package manager and runtime
 - **🎨 Tailwind CSS v4** - Modern utility-first CSS framework
 - **⚡ Vite** - Lightning fast build tool
+- **⚡ Supabase** - Postgres development platform
 
 ### 🧩 **UI & Components**
 
@@ -64,6 +65,9 @@ nvm use
 # Install dependencies
 bun install
 
+# Add env taking those inside the `env.example` needed for the project
+bun install
+
 # Start development server
 bun dev
 ```
@@ -91,11 +95,16 @@ nucleus/
 │   └── 📁 assets/             # Static assets
 │   ├── 📁 components/         # Vue components
 │   ├── 📁 composables/        # Vue composables
+│   ├── 📁 generated/          # File generated statically (at buildtime)
 │   ├── 📁 layouts/            # Layout components
 │   ├── 📁 pages/              # Page components
+│   ├── 📁 stores/             # Pinia stores
+│   ├── 📁 utils/              # Utils Functions
 ├── 📁 tests/                  # Test files
 │   └── 📁 e2e/                # End-to-end tests
 ├── 📁 server/                 # Server-side code
+├── 📁 i18n/                   # Translated strings
+├── 📁 modules/                # Local TypeScript module
 ├── 📁 public/                 # Public static files
 └── 📄 nuxt.config.ts          # Nuxt configuration
 ```
@@ -139,14 +148,14 @@ bun test:e2e
 
 ### 🔄 In Progress
 
-- [ ] **🌍 Internationalization (i18n)** - Multi-language support
+- [x] **🌍 Internationalization (i18n)** - Multi-language support
 - [ ] **🎨 Custom Icon Library** - Project-specific icons
 - [ ] **📊 Coverage GitHub Action** - Automated coverage reports
 
 ### 🎯 Planned Features
 
 - [ ] **🔍 Zod** - Runtime type validation
-- [ ] **🗂️ Pinia** - State management
+- [x] **🗂️ Pinia** - State management
 - [ ] **🎨 Chromatic** - Visual testing
 - [ ] **🚦 Lighthouse** - Performance monitoring
 
