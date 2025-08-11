@@ -55,6 +55,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/eslint",
     "@nuxt/ui",
+    "@nuxt/icon", // 👉 Here you can browse all the icons: https://icones.js.org/
     "@nuxtjs/i18n",
     "@vueuse/nuxt",
     "@pinia/nuxt",
@@ -63,6 +64,7 @@ export default defineNuxtConfig({
     "@nuxt/test-utils/module",
     "nuxt-security",
     "@nuxtjs/supabase",
+    "nuxt-charts",
 
     // Local TypeScript module
     "./modules/generateComponentsMapping",

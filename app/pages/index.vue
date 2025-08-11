@@ -21,35 +21,47 @@ const {
   doubleCount,
 } = storeToRefs(store)
 
-const { addNotificationError } = useNotifications()
+const {
+  addNotificationSuccess,
+  addNotificationError,
+} = useNotifications()
 </script>
 
 <template>
-  <UContainer class="flex items-center gap-4">
-    <h1>Hello world</h1>
-    <button @click="locale === 'it' ? setLocale('en') : setLocale('it')">
-      change locale
-    </button>
+  <div class="flex flex-col items-center gap-4">
+    <h1 class="text-3xl">
+      Hello world
+    </h1>
+    <UButton @click="locale === 'it' ? setLocale('en') : setLocale('it')">
+      <Icon name="heroicons:language" /> Change locale
+    </UButton>
     <p>
-      current locale: {{ locale }}
+      current locale: {{ locale }} -
       {{ t('success') }}
     </p>
     <br>
 
-    <button @click="store.increment">
+    <UButton @click="store.increment">
       increment
-    </button>
+    </UButton>
 
     count: {{ count }}
     doubleCount: {{ doubleCount }}
 
-    <button
+    <UButton
+      @click="addNotificationSuccess({
+        key: 'signUp',
+      })"
+    >
+      add notifiction success
+    </UButton>
+    <UButton
       @click="addNotificationError({
         key: 'signUp',
       })"
     >
-      add notifiction
-    </button>
+      add notifiction error
+    </UButton>
 
     <ExamplesModal />
 
@@ -58,5 +70,20 @@ const { addNotificationError } = useNotifications()
     <ExamplesSlideover />
 
     <div>VueUse mouse pos: {{ x }}, {{ y }}</div>
-  </UContainer>
+
+    <div>
+      <UFileUpload
+        layout="list"
+        multiple
+        label="Drop your images here"
+        description="SVG, PNG, JPG or GIF (max. 2MB)"
+        class="w-96"
+        :ui="{
+          base: 'min-h-48',
+        }"
+      />
+    </div>
+
+    <CustomForm />
+  </div>
 </template>
